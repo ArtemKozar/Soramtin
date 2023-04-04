@@ -1,6 +1,8 @@
 import './Navbar.scss'
+import { images } from '../../constans'
+
 const Navbar = () => {
-  return <div>Navbar</div>
+  return <nav></nav>
 }
 
 export default Navbar
