@@ -1,7 +1,9 @@
-import './App.scss'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import NavLayout from './layouts/NavLayout'
+
+import NavLayout from './components/layouts/NavLayout'
 import { Home, About, MyList, NotFound } from './pages'
+
+import './App.scss'
 
 function App() {
   return (

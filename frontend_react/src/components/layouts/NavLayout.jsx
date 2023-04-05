@@ -1,10 +1,14 @@
 import { Outlet } from 'react-router'
-import { Navbar } from '../components'
+import { Navbar } from '..'
+import Header from './Header/Header'
 
 const NavLayout = () => {
   return (
     <>
-      <Navbar />
+      <Header>
+        <Navbar />
+      </Header>
+
       <Outlet />
     </>
   )
