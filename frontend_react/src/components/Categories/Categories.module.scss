@@ -7,15 +7,7 @@
 
 .cards {
   @include flex-wrap-sp-ar;
-}
-
-.cards:hover .card:not(:hover) {
-  filter: grayscale(100%);
-  opacity: 0.75;
-}
-
-.cards:hover .card:not(:hover)::after {
-  background-color: rgba(#000, 0.5);
+  margin: 0 100px;
 }
 
 h2 {
