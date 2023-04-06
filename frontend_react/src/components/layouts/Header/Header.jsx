@@ -1,9 +1,11 @@
-import './Header.scss'
+import './Header.module.scss'
+import style from './Header.module.scss'
+import { images } from '../../../constans'
 
 const Header = ({ children }) => {
   return (
-    <div>
-      <div>Header</div>
+    <div className={style.header}>
+      <img src={images.logo} alt="logo" />
       {children}
     </div>
   )
