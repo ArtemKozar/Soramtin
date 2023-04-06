@@ -1,8 +1,14 @@
-import Description from '../../components/layouts/Description/Description'
-import './Home.module.scss'
+import Categories from '../../components/Categories/Categories'
+import Description from '../../components/Description/Description'
+import style from './Home.module.scss'
 
 const Home = () => {
-  return <Description />
+  return (
+    <div className={style.wrapper}>
+      <Description />
+      <Categories />
+    </div>
+  )
 }
 
 export default Home

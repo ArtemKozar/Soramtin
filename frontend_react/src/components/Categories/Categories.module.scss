@@ -1,0 +1,24 @@
+@import '../../App.scss';
+@import '../Category/Category.module.scss';
+
+.categories_wrapper {
+  margin-bottom: 70px;
+}
+
+.cards {
+  @include flex-wrap-sp-ar;
+}
+
+.cards:hover .card:not(:hover) {
+  filter: grayscale(100%);
+  opacity: 0.75;
+}
+
+.cards:hover .card:not(:hover)::after {
+  background-color: rgba(#000, 0.5);
+}
+
+h2 {
+  text-align: center;
+  padding: 20px;
+}

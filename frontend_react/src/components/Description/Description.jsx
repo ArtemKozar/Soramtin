@@ -1,5 +1,5 @@
 import style from './Description.module.scss'
-import { images } from '../../../constans'
+import { images } from '../../constans'
 
 const Description = () => {
   return (
