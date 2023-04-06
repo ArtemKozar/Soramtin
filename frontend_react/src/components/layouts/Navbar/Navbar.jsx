@@ -18,7 +18,7 @@ const Navbar = () => {
       </NavLink>
       <NavLink
         className={({ isActive }) => (isActive ? style.activeLink : 'link')}
-        to="mylink"
+        to="mylist"
       >
         MyList
       </NavLink>

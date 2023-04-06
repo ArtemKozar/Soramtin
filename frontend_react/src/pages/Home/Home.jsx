@@ -1,7 +1,8 @@
+import Description from '../../components/layouts/Description/Description'
 import './Home.module.scss'
 
 const Home = () => {
-  return <div>Home</div>
+  return <Description />
 }
 
 export default Home

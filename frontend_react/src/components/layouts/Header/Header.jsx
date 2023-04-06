@@ -1,4 +1,3 @@
-import './Header.module.scss'
 import style from './Header.module.scss'
 import { images } from '../../../constans'
 

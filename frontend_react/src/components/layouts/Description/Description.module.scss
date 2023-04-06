@@ -1,0 +1,21 @@
+.description {
+  display: flex;
+  justify-content: space-between;
+}
+
+.desc_img {
+  flex-basis: 40%;
+  width: auto;
+  height: 600px;
+  padding: 50px 10px 10px 100px;
+}
+
+.desc_img img {
+  width: 100%;
+  height: auto;
+}
+
+h1 {
+  margin: auto 50px;
+  flex-basis: 60%;
+}
