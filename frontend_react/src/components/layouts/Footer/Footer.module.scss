@@ -1,4 +1,7 @@
+@import '../../../App.scss';
+
 .footer {
-  background-color: olive;
+  text-align: center;
+  background-color: $white-color;
   margin-top: auto;
 }

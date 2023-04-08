@@ -4,7 +4,8 @@ import { images } from '../../../constans'
 const Header = ({ children }) => {
   return (
     <div className={style.header}>
-      <img src={images.logo} alt="logo" />
+      {/* <img src={images.logo} alt="logo" /> */}
+      <h1>Soramtin</h1>
       {children}
     </div>
   )
