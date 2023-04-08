@@ -1,0 +1,37 @@
+@import '../../App.scss';
+.list_item {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+  height: 80px;
+}
+
+.list_item_item {
+}
+
+.list_item_img {
+  flex-basis: 5%;
+  margin: 0 15px;
+  @include flex-center;
+  img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+  }
+}
+
+.list_item_description {
+  flex-basis: 75%;
+}
+
+.list_item_my_list {
+  flex-basis: 20%;
+  @include flex-center;
+  justify-content: space-around;
+}
+
+.list_item_btn {
+  height: 25px;
+  width: 25px;
+  cursor: pointer;
+}
