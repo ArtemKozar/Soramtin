@@ -27,6 +27,12 @@ $white-color: #ffffff;
   align-items: center;
 }
 
+@mixin flex-sp-ar-cent() {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 @mixin flex-wrap-sp-ar {
   display: flex;
   flex-wrap: wrap;

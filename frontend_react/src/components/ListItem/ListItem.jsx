@@ -1,4 +1,3 @@
-import { AiOutlinePlusSquare } from 'react-icons/fa'
 import { AiOutlinePlusCircle } from 'react-icons/ai'
 import style from './ListItem.module.scss'
 import { images } from '../../constans'

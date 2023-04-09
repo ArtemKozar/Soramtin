@@ -13,7 +13,9 @@ const NavLayout = () => {
 
       <Outlet />
 
-      <Footer />
+      <Footer>
+        <Navbar />
+      </Footer>
     </div>
   )
 }
