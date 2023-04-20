@@ -1,0 +1,13 @@
+@import '../../../App.scss';
+
+.header {
+  @include flex-center;
+  justify-content: space-around;
+  background-color: $white-color;
+  padding: 10px;
+  h1 {
+    font-family: $font-logo;
+    font-size: 32px;
+    color: $secondary-color;
+  }
+}

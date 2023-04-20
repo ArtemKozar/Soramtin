@@ -1,0 +1,21 @@
+@import '../../../App.scss';
+
+nav {
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+  a {
+    text-decoration: none;
+    font-size: 28px;
+    font-weight: bold;
+    color: $black-color;
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+}
+
+.activeLink {
+  color: $dark-green-color;
+  text-decoration: underline;
+}

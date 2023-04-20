@@ -1,0 +1,39 @@
+@import '../../../App.scss';
+
+.footer {
+  text-align: center;
+  background-color: $white-color;
+  margin-top: auto;
+  display: flex;
+  height: 200px;
+  h1 {
+    font-family: $font-logo;
+    font-size: 32px;
+    color: $secondary-color;
+    flex-basis: 20%;
+  }
+  .footer_nav {
+    flex-basis: 60%;
+    @include flex-center;
+
+    a {
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      color: $black-color;
+      margin-left: 5rem;
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+  }
+  .footer_social {
+    flex-basis: 20%;
+    @include flex-sp-ar-cent;
+    .footer_social_icon {
+      height: 30px;
+      width: 30px;
+      margin-right: 70px;
+    }
+  }
+}

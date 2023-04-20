@@ -1,0 +1,51 @@
+@import '../../App.scss';
+.list_item {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+  height: 80px;
+}
+
+.list_item_img {
+  flex-basis: 5%;
+  margin: 0 15px;
+  @include flex-center;
+  img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+  }
+}
+
+.list_item_description {
+  flex-basis: 75%;
+  padding: 3px 0;
+  a {
+    text-decoration: none;
+    color: $black-color;
+    &:hover {
+      color: $primary-color;
+    }
+  }
+  p {
+    color: $gray-color;
+  }
+}
+
+.list_item_my_list {
+  flex-basis: 20%;
+  @include flex-center;
+  justify-content: space-around;
+}
+
+.list_item_btn {
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}
+
+.list_item_line {
+  border: 1px solid $gray-light-color;
+  margin: 0 auto;
+  width: 95%;
+}
