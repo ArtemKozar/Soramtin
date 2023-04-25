@@ -1,4 +1,7 @@
 import { useState } from 'react'
+
+import Pagination from '@mui/material/Pagination';
+
 import useListAPI from '../../services/useListAPI'
 import ListItem from '../ListItem/ListItem'
 
@@ -26,9 +29,12 @@ const List = () => {
             key={listItem.id}
             {...listItem}
           />
+
         )
       })}
+      <Pagination count={10}  />
     </div>
+
   )
 }
 
