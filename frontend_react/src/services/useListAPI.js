@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 
 const useListAPI = () => {
-  const API_URL_LIST = 'https://jsonplaceholder.typicode.com/users/1/posts'
+  const API_URL_LIST = 'https://jsonplaceholder.typicode.com/users/4/posts'
   const [list, setList] = useState([])
   const [error, setError] = useState('')
 
