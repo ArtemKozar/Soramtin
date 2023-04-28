@@ -1,41 +1,60 @@
-import { useState } from 'react'
-
-import Pagination from '@mui/material/Pagination';
+import {useState} from 'react'
 
 import useListAPI from '../../services/useListAPI'
 import ListItem from '../ListItem/ListItem'
 
 import style from './List.module.scss'
 
+import {Pagination} from "@mui/material";
+
 const List = () => {
-  const { list, error } = useListAPI()
-  const [userItems, setUserItem] = useState([])
+    const {list, error} = useListAPI()
+    const [userItems, setUserItem] = useState([])
 
-  if (error) {
-    return <h1>Error: {error}</h1>
-  }
 
-  console.log(userItems)
+    const [pageObject, setPage] = useState({
+        page: 1,
+        perPage: 3
+    })
 
-  return (
-    <div className={style.list_wrapper}>
-      <h1>List</h1>
+    const {page, perPage} = pageObject
 
-      {(list || []).map((listItem) => {
-        return (
-          <ListItem
-            setUserItem={setUserItem}
-            userItems={userItems}
-            key={listItem.id}
-            {...listItem}
-          />
+    const handlerChange = (ev, page) => {
+        setPage(prevState => ({
+            ...prevState, page
+        }))
+    }
 
-        )
-      })}
-      <Pagination count={10}  />
-    </div>
+    const filteredData = list.slice((page - 1) * perPage, page * perPage);
 
-  )
+    if (error) {
+        return <h1>Error: {error}</h1>
+    }
+
+    return (
+        <div className={style.list_wrapper}>
+            <h1>List</h1>
+
+            {(filteredData || []).map((listItem) => {
+                return (
+                    <ListItem
+
+                        setUserItem={setUserItem}
+                        userItems={userItems}
+                        key={listItem.id}
+                        {...listItem}
+                    />
+
+                )
+            })}
+            <Pagination
+                count={Math.ceil(list.length / perPage)}
+                page={page}
+                onChange={handlerChange}
+            />
+        </div>
+
+    )
 }
 
 export default List
