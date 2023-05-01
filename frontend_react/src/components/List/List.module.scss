@@ -3,9 +3,17 @@
 .list_wrapper {
   border: 2px solid $gray-light-color;
   border-radius: 15px;
-  padding-bottom: 80px;
+  padding-bottom: 60px;
 }
 
 h1 {
   padding: 20px;
 }
+
+.pagination {
+  margin: 0 auto;
+  ul{
+    margin: 20px auto 0;
+  }
+}
+
