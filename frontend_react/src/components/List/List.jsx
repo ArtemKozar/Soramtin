@@ -2,7 +2,6 @@ import {useState} from 'react'
 
 import db from "../../services/firebase"
 import {onSnapshot, collection} from "firebase/firestore"
-import useListAPI from '../../services/useListAPI'
 import ListItem from '../ListItem/ListItem'
 
 import style from './List.module.scss'
@@ -11,16 +10,20 @@ import {Pagination} from "@mui/material";
 import {useEffect} from "react";
 
 const List = () => {
-    const {list, error} = useListAPI()
+    // const {list, error} = useListAPI()
     const [userItems, setUserItem] = useState([])
     const [channels, setChannels] = useState([])
-    console.log(channels)
-
+    const [error, setError] = useState('')
 
     useEffect(() => {
-        onSnapshot(collection(db, "channels"), (snapshot) =>
-            setChannels(snapshot.docs.map((doc) => ({...doc.data(), id: doc.id})))
-        )
+        try {
+            onSnapshot(collection(db, "channels"), (snapshot) =>
+                setChannels(snapshot.docs.map((doc) => ({...doc.data(), id: doc.id})))
+            )
+        }catch (error){
+            setError(error.message)
+        }
+
     }, [])
 
 

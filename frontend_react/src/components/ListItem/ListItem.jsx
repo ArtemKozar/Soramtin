@@ -1,8 +1,6 @@
 import { AiOutlinePlusCircle, AiFillCheckCircle } from 'react-icons/ai'
 import style from './ListItem.module.scss'
-import { images } from '../../constans'
 
-// const ListItem = ({ id, title, body, setUserItem, userItems })
 const ListItem = ({ id, name, description, img, link, category, setUserItem, userItems }) => {
   const isAdded = userItems.filter((item) => item.id === id)
   const addUserItemHandler = () => {
