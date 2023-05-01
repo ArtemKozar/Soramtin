@@ -48,6 +48,7 @@ const List = () => {
                 )
             })}
             <Pagination
+                className={style.pagination}
                 count={Math.ceil(list.length / perPage)}
                 page={page}
                 onChange={handlerChange}
