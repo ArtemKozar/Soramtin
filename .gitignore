@@ -3,6 +3,8 @@
 logs
 **/*.backup.*
 **/*.back.*
+.idea/codeStyles/
+
 
 node_modules
 
