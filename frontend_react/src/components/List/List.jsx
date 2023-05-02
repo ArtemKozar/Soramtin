@@ -1,41 +1,35 @@
-import { useState } from 'react'
+import {useState} from 'react'
 
-import Pagination from '@mui/material/Pagination';
-
-import useListAPI from '../../services/useListAPI'
 import ListItem from '../ListItem/ListItem'
+import PaginationWrapper from "../layouts/Pagination/Pagination";
 
 import style from './List.module.scss'
+import useChannelsFirebase from "../../services/useChannelsFirebase";
 
 const List = () => {
-  const { list, error } = useListAPI()
-  const [userItems, setUserItem] = useState([])
+    const {channels, error} = useChannelsFirebase()
+    const [userItems, setUserItem] = useState([])
 
-  if (error) {
-    return <h1>Error: {error}</h1>
-  }
+    if (error) {
+        return <h1>Error: {error}</h1>
+    }
 
-  console.log(userItems)
+    return (
+        <div className={style.list_wrapper}>
+            <h1>List</h1>
+            <PaginationWrapper
+                data={channels}
+                renderWithNewProps={true}
+                elementsPerPage={5}
+            >
+                <ListItem
+                    setUserItem={setUserItem}
+                    userItems={userItems}
+                />
+            </PaginationWrapper>
+        </div>
 
-  return (
-    <div className={style.list_wrapper}>
-      <h1>List</h1>
-
-      {(list || []).map((listItem) => {
-        return (
-          <ListItem
-            setUserItem={setUserItem}
-            userItems={userItems}
-            key={listItem.id}
-            {...listItem}
-          />
-
-        )
-      })}
-      <Pagination count={10}  />
-    </div>
-
-  )
+    )
 }
 
 export default List

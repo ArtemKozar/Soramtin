@@ -1,12 +1,10 @@
 import { AiOutlinePlusCircle, AiFillCheckCircle } from 'react-icons/ai'
 import style from './ListItem.module.scss'
-import { images } from '../../constans'
-import { useState } from 'react'
 
-const ListItem = ({ id, title, body, setUserItem, userItems }) => {
+const ListItem = ({ id, name, description, img, link, category, setUserItem, userItems }) => {
   const isAdded = userItems.filter((item) => item.id === id)
   const addUserItemHandler = () => {
-    setUserItem((prevItem) => [...prevItem, { id, body, title }])
+    setUserItem((prevItem) => [...prevItem, { id, body: description, name }])
   }
 
   const removeUserItemHandler = () => {
@@ -17,17 +15,17 @@ const ListItem = ({ id, title, body, setUserItem, userItems }) => {
     <div>
       <div className={style.list_item}>
         <div className={style.list_item_img}>
-          <img src={images.account_image} alt="account foto" />
+          <img src={img} alt="account foto" />
         </div>
         <div className={style.list_item_description}>
           <a
-            href="https://www.youtube.com/watch?v=e3L1PIY1pN8&ab_channel=STEEZYASFUCK"
+            href={link}
             target="_blank"
             rel="noreferrer"
           >
-            <h3>{title}</h3>
+            <h3>{name}</h3>
           </a>
-          <p>{body}</p>
+          <p>{description}</p>
         </div>
         <div className={style.list_item_my_list}>
           <p>MY LIST</p>
