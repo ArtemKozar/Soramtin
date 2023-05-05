@@ -1,24 +1,25 @@
-import useCategoriesAPI from '../../services/useCategoriesAPI'
 import Category from '../Category/Category'
 import style from './Categories.module.scss'
+import useChannelsFirebase from "../../services/useChannelsFirebase";
 
 const Categories = () => {
-  const { categories, error } = useCategoriesAPI()
+    const {channelsCollection, error} = useChannelsFirebase()
 
-  if (error) {
-    return <h1>Error: {error}</h1>
-  }
+    if (error) {
+        return <h1>Error: {error}</h1>
+    }
 
-  return (
-    <div className={style.categories_wrapper}>
-      <h2>Categories</h2>
-      <div className={style.cards}>
-        {(categories || []).map((category) => {
-          return <Category key={category.id} {...category} />
-        })}
-      </div>
-    </div>
-  )
+    return (
+        <div className={style.categories_wrapper}>
+            <h2>Categories</h2>
+            <div className={style.cards}>
+
+                {(channelsCollection || []).map((category, index) => {
+                    return <Category key={index} category={category} />
+                })}
+            </div>
+        </div>
+    )
 }
 
 export default Categories
