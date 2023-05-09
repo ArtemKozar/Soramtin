@@ -6,8 +6,9 @@ import PaginationWrapper from "../layouts/Pagination/Pagination";
 import style from './List.module.scss'
 import useChannelsFirebase from "../../services/useChannelsFirebase";
 
-const List = () => {
-    const {channels, error} = useChannelsFirebase()
+const List = ({query}) => {
+    const {channels, error} = useChannelsFirebase({query})
+
     const [userItems, setUserItem] = useState([])
 
     if (error) {
@@ -20,7 +21,7 @@ const List = () => {
             <PaginationWrapper
                 data={channels}
                 renderWithNewProps={true}
-                elementsPerPage={5}
+                elementsPerPage={10}
             >
                 <ListItem
                     setUserItem={setUserItem}
