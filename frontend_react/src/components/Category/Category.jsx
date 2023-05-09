@@ -1,9 +1,20 @@
 import style from './Category.module.scss'
 
-const Category = ({ category }) => {
-  console.log("category "+category)
+const Category = ({ category, setQuery, query }) => {
+
+
+  const handleClick = () => {
+    setQuery(category)
+  };
+
+const isActive = category===query
+
   return (
-    <div className={style.card}>
+    <div
+      data-isActive={isActive}
+      className={style.card}
+
+      onClick={handleClick}>
       <h3>{category}</h3>
     </div>
   )

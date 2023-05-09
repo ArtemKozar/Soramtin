@@ -24,4 +24,11 @@
   h3 {
     text-align: center;
   }
+
+  &[data-isActive="true"]{
+    color: $white-color;
+    background: $primary-color;
+    border: none;
+  }
+
 }
