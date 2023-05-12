@@ -1,7 +1,10 @@
 import style from './Category.module.scss'
+import {useContext} from "react";
+import QueryContext from "../../contexts/QueryContext";
 
-const Category = ({ category, setQuery, query }) => {
+const Category = ({ category }) => {
 
+const {query, setQuery} = useContext(QueryContext)
 
   const handleClick = () => {
     setQuery(category)
@@ -11,7 +14,7 @@ const isActive = category===query
 
   return (
     <div
-      data-isActive={isActive}
+      data-isactive={isActive}
       className={style.card}
 
       onClick={handleClick}>

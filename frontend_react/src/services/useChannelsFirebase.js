@@ -1,13 +1,17 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {collection, onSnapshot} from "firebase/firestore";
 import db from "./firebase";
+import QueryContext from "../contexts/QueryContext";
 
-const UseChannelsFirebase = ({query=""}) => {
+const UseChannelsFirebase = () => {
+
+  const {query} = useContext(QueryContext)
 
   const [channels, setChannels] = useState([])
   const [error, setError] = useState('')
 
   const channelsCollection = ["Історія", "Авто", "Розважальне", "Кіно", "Космос", "Економіка", "Тех"]
+
 
   useEffect(() => {
     try {
